@@ -65,7 +65,8 @@ std::vector<std::string> ConverterJSON::GetRequests() {
 //-------------------------------
 
 void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> _answers) {
-
+    char mk = '\t';
+    char rk = '\n';
     std::ofstream fileAnswer("..\\..\\config\\answers.json");
     if(fileAnswer.is_open()){
         json answerJSON;
@@ -91,8 +92,9 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> _
                                 j_pair["rank"] = std::to_string(_answers[el][i].second);
                                 jsonRelevance["relevance"].emplace_back(j_pair);
                             }
-                            if(!jsonRelevance["relevance"].empty())
+                            if(!jsonRelevance["relevance"].empty()) {
                                 jsonRequests[keyRequests].emplace_back(jsonRelevance);
+                            }
                         } else{ //если _answers[el].size() = 1
                             json j_pair;
                             j_pair["docId"] = std::to_string(_answers[el][0].first);
@@ -110,16 +112,11 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> _
                 answerJSON["answers"] += jsonRequests;
             }
         }else {//если _answers.empty() == true
-        //std::cout << "Answer is empty\n";
+            //std::cout << "Answer is empty\n";
             return;
         }
         fileAnswer << answerJSON;
         fileAnswer.close();
     } else std::cerr << "failed to open/create file \"..\\config\\answers.json\"" << std::endl;
 }
-//------------------------------------------
-int ConverterJSON::GetResponsesLimit() {
-    json::iterator it = config.find("config");
-    if(it != config.end()) return (*it)["max_responses"];
-    else return -1;
-}
+//-----------------------------------------

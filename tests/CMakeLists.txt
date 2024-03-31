@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-add_executable(TestEngine Test1.cpp ${SE_INCLUDE}/converterJSON.h ${SE_SRC}/converterJSON.cpp ${SE_INCLUDE}/invertedIndex.h ${SE_SRC}/invertedIndex.cpp ${SE_INCLUDE}/searchEngine.h ${SE_SRC}/searchEngine.cpp)
+add_executable(TestEngine indexTest.cpp serverTest.cpp ${SE_INCLUDE}/converterJSON.h ${SE_SRC}/converterJSON.cpp ${SE_INCLUDE}/invertedIndex.h ${SE_SRC}/invertedIndex.cpp ${SE_INCLUDE}/searchEngine.h ${SE_SRC}/searchEngine.cpp)
 
 target_include_directories(TestEngine PUBLIC ${SE_INCLUDE})
 #---------------------------------------------------------

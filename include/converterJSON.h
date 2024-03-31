@@ -30,7 +30,8 @@ public:
 
     std::vector<std::string> GetRequests();
 
-    int GetResponsesLimit();
+    int GetResponsesLimit() {return responsesLimit;};
 
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> _answers);
+
 };
