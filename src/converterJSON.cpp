@@ -65,8 +65,6 @@ std::vector<std::string> ConverterJSON::GetRequests() {
 //-------------------------------
 
 void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> _answers) {
-    char mk = '\t';
-    char rk = '\n';
     std::ofstream fileAnswer("..\\..\\config\\answers.json");
     if(fileAnswer.is_open()){
         json answerJSON;
