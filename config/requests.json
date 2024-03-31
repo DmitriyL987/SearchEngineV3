@@ -1,0 +1,9 @@
+{
+  "requests": [
+    "milk sugar.coffee water /coffee/ -tea",
+    "animals car\\airplane bus car pussycat horse",
+    "juice, pineapple, bananas",
+    "...it can also be used to access qt's resource system.",
+    "apple microsoft linux windows macos the computer"
+  ]
+}

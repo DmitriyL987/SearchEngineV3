@@ -1,0 +1,3 @@
+"milk milk sugar coffee"
+a qdir is used to manipulate path names, access information regarding paths and files, and manipulate the underlying file system. it can also be used to access qt's resource system.
+qt uses "/" as a universal directory separator in the same way that "/" is used as a path separator in urls.

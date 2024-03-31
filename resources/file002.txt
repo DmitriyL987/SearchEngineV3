@@ -1,0 +1,3 @@
+"tea animals car airplane animals animals tea sugar linux [linux] *linux "
+  qt provides four classes for handling image data: qimage, qpixmap, qbitmap and qpicture. qimage is designed and optimized for i/o, and for direct pixel access and manipulation,
+   while qpixmap is designed and optimized for showing images on screen. qbitmap is only a convenience class that inherits qpixmap, ensuring a depth of 1. finally,

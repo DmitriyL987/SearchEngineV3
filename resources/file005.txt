@@ -1,0 +1,2 @@
+"milk milk horse dog horse dog horse dog horse horse//horse/horse/horse*horse паровоз linux water pussycat "
+qfile is an i/o device for reading and writing text and binary files and resources. if you've reached the end of the file, atend() returns true. pussycat

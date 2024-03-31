@@ -1,0 +1,4 @@
+"coffee coffee tea milk milk milk"
+the class serves as a container for tea qgraphicsitems. it is used together with qgraphicsview for visualizing graphical items, such as lines, rectangles, text, or even custom items, on a 2d surface. qgraphicsscene is part of the graphics view framework.
+qgraphicsscene also provides functionality tea that lets you efficiently determine both the location of tea items, and for determining what items are visible within an arbitrary area on the scene. with the qgraphicsview widget, you can either visualize the whole scene, or zoom in and view only parts of the scene.
+note that qgraphicsscene has no visual appearance of its own; it only manages the items. you need tea to create a qgraphicsview widget to visualize the scene.
