@@ -34,4 +34,5 @@ public:
 
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> _answers);
 
+    void postProcessingAnswerJSON();
 };

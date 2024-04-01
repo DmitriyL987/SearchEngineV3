@@ -22,5 +22,6 @@ int main() {
             preAnswer[i].emplace_back(std::make_pair(tmp[i][j].doc_id,tmp[i][j].rank));
     }
     converter.putAnswers(preAnswer);
+    converter.postProcessingAnswerJSON();
     return 0;
 }

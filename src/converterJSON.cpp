@@ -117,4 +117,41 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> _
         fileAnswer.close();
     } else std::cerr << "failed to open/create file \"..\\config\\answers.json\"" << std::endl;
 }
+
+void ConverterJSON::postProcessingAnswerJSON() {
+    std::string text("");
+    size_t len;
+    std::string vk = "\n\t";
+    {
+        std::ifstream file("..\\..\\config\\answers.json", std::ios::in | std::ios::ate);
+        if (!file.is_open()) { std::cerr << "Error open file\n"; return; }
+        len = file.tellg();
+
+        text.resize(len);
+        file.seekg(0);
+        file.read(&text[0], len);
+        file.close();
+    }
+        //-----------------------------
+    {
+        std::ofstream file("..\\..\\config\\answers.json", std::ios::out | std::ios::trunc);
+        if (!file.is_open()) { std::cerr << "Error open file\n"; return; }
+        for (int i = 0; i < text.size(); ++i) {
+            if (text[i] == '[') {
+                vk+="\t";
+                text.insert( i+1 , vk);
+                i+=vk.size();
+            } else if (text[i] == ']') {
+                vk.erase(vk.size()-1);
+                text.insert(i+1, vk);
+                i+=vk.size();
+            } else if(text[i] == ',' && text[i+1] == '{'){
+                text.insert(i+1, vk);
+                i+=vk.size();
+            }
+        }
+        file.write(text.c_str(), text.size());
+        file.close();
+    }
+}
 //-----------------------------------------
